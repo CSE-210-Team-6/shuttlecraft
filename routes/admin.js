@@ -100,7 +100,6 @@ router.get('/notifications', async (req, res) => {
     notes.map(async notification => {
       const { actor } = await fetchUser(notification.notification.actor);
       let note, original;
-      // TODO: check if user is in following list
       actor.isFollowing = isFollowing(actor.id);
 
       if (notification.notification.type === 'Like' || notification.notification.type === 'Announce') {
@@ -321,7 +320,6 @@ router.get('/post', async (req, res) => {
   if (req.query.edit) {
     console.log('COMPOSING EDIT', req.query.edit);
     prev = await getNote(req.query.edit);
-    // console.log("ORIGINAL", original);
   }
 
   res.status(200).render('partials/composer', {
@@ -341,7 +339,6 @@ router.get('/post', async (req, res) => {
  * Update and create the post using the POST method
  */
 router.post('/post', async (req, res) => {
-  // TODO: this is probably supposed to be a post to /api/outbox
   const post = await createNote(
     req.body.post,
     req.body.cw,
@@ -546,7 +543,6 @@ router.post('/prefsAccount', (req, res) => {
   const updates = req.body;
   const bio = updates.bio;
   const img = updates.avatarInput;
-  console.log('me ', ActivityPub.actor.name);
   console.log('GOT ACCOUNT UPDATES', updates);
   updateAccount(updates.username, DOMAIN, bio, img).then(myaccount => {
     // set the server to use the main account as its primary actor
@@ -683,8 +679,6 @@ router.post('/follow', async (req, res) => {
       } else {
         // send unfollow
         await ActivityPub.sendUndoFollow(actor, status.id);
-
-        // todo: this should just be a function like removeFollowing
 
         let following = getFollowing();
 
