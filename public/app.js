@@ -212,9 +212,9 @@ const app = {
         inReplyTo: inReplyTo.value,
         to: to.value,
         editOf: editOf ? editOf.value : null,
-        canReply: canReply,
-        canBoost: canBoost,
-        canFave: canFave
+        canReply,
+        canBoost,
+        canFave
       })
     )
       .then(newHtml => {
