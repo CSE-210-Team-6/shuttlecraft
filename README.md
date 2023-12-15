@@ -1,3 +1,7 @@
+[![codecov](https://codecov.io/gh/CSE-210-Team-6/shuttlecraft/graph/badge.svg?token=01369M4P5C)](https://codecov.io/gh/CSE-210-Team-6/shuttlecraft)
+![code style](https://github.com/CSE-210-Team-6/shuttlecraft/actions/workflows/lint.yml/badge.svg)
+![tests](https://github.com/CSE-210-Team-6/shuttlecraft/actions/workflows/test.yml/badge.svg)
+
 # SHUTTLECRAFT by the Confused Mavericks
 
 This is a project to create an "easy" way to participate in the ActivityPub "Fediverse" and other indie web protocols like RSS.
@@ -141,8 +145,8 @@ WHOA! What happened? Well, a copy of the Shuttlecraft code was sent to a new, un
 
 1. First, make sure the URL of your Glitch project is the one you like. You can change it in the "Settings" menu.
 2. Then, configure the options [as described above](#config) using the .env editor. 
-3. Finally, create and login to the dashboard at `https://yourdomain.glitch.me/private`. 
-4. It is very important that the domain you add while creating you user is `https://{yourdomain}.glitch.me`. If not this will break things!
+3. Finally, create and login to the dashboard at `https://{yourdomain}.glitch.me/private`. 
+4. It is very important that the domain you add while creating you user is `https://{yourdomain}.glitch.me` and matches exactly with the one in .env file. If not this will break things!
 5. Done!
 
 ### Advanced: Docker
@@ -162,6 +166,7 @@ WHOA! What happened? Well, a copy of the Shuttlecraft code was sent to a new, un
    ```
 5. Deploy the image to your container platform with the required environment variables (`DOMAIN`).
 6. Configure a web service to proxy requests to the container port and provide HTTPS (see "Reverse proxy" above).
+
 
 ## Customize
 
