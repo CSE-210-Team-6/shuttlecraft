@@ -2,7 +2,7 @@
 ![code style](https://github.com/CSE-210-Team-6/shuttlecraft/actions/workflows/lint.yml/badge.svg)
 ![tests](https://github.com/CSE-210-Team-6/shuttlecraft/actions/workflows/test.yml/badge.svg)
 
-# SHUTTLECRAFT by the Confused Mavericks
+# SHUTTLECRAFT Improved
 
 This is a project to create an "easy" way to participate in the ActivityPub "Fediverse" and other indie web protocols like RSS.
 This was created by [Ben Brown](https://benbrown.com) and enhanced by UCSD CSE 210 Team 6 (Confused Mavericks).
